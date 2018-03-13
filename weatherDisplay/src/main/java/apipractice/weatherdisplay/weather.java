@@ -5,48 +5,34 @@
  */
 package apipractice.weatherdisplay;
 
+import java.util.Map;
+
+
 /**
  *
  * @author aabdin02
  */
 public class weather {
-    private final int precipitationPercentage;
-    private final int humidity;
-    private final int windMpH;
-    private final int temperatureDeg;
-    private final int temperatureFah;
-    private final double time;
-    
-    public weather(int prep, int hum, int wind, int tempDeg, int tempFah, double time){
-        this.precipitationPercentage = prep;
-        this.humidity = hum;
-        this.windMpH = wind;
-        this.temperatureDeg = tempDeg;
-        this.temperatureFah = tempFah;
-        this.time = time;
+//    private final int precipitationPercentage;
+//    private String []list;
+    private  String   cnt;
+    private  double temp;
+    private List[] list;
+
+    public weather(){
+        
     }
     
-    public int getPrecipiPerc(){
-        return precipitationPercentage;
+    public double getName(){
+        return temp;
     }
     
-    public int getHu(){
-        return humidity;
+    public String getCnt(){
+        return cnt;
     }
     
-    public int getWiMpH(){
-        return windMpH;
+    public List [] getList(){
+        return list;
     }
     
-    public int getTempDeg(){
-        return temperatureDeg;
-    }
-    
-    public int getTempFah(){
-        return temperatureFah;
-    }
-    
-    public double getTime(){
-        return time;
-    }
 }
