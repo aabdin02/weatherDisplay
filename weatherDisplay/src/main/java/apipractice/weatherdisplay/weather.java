@@ -6,6 +6,7 @@
 package apipractice.weatherdisplay;
 
 import java.util.Map;
+import java.util.TreeMap;
 
 
 /**
@@ -13,26 +14,27 @@ import java.util.Map;
  * @author aabdin02
  */
 public class weather {
-//    private final int precipitationPercentage;
-//    private String []list;
-    private  String   cnt;
-    private  double temp;
-    private List[] list;
-
+    private  String   base;
+    private final Map<String,Double> main = new TreeMap();
+    
     public weather(){
         
     }
     
-    public double getName(){
-        return temp;
+    public double getTemp(){
+        return main.get("temp");
     }
     
-    public String getCnt(){
-        return cnt;
+    public double getPressure(){
+        return main.get("pressure");
     }
     
-    public List [] getList(){
-        return list;
+    public double getHumidity(){
+        return main.get("humidity");
+    }
+    
+    public Map<String,Double> getMain(){
+        return main;
     }
     
 }

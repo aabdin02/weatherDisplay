@@ -22,8 +22,10 @@ public class main1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception{
-        String url = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=b7b8b4d8ff1a05a46495fc7c424ca118";
-        HttpGet get = new HttpGet(url);
+        String city = "Seattle";
+        String APPID ="&APPID=b7b8b4d8ff1a05a46495fc7c424ca118"; 
+        String api = "http://api.openweathermap.org/data/2.5/weather?q="+city + APPID;
+        HttpGet get = new HttpGet(api);
        
         Gson gson = new GsonBuilder().create();
         
@@ -37,14 +39,8 @@ public class main1 {
         
         weather weatr = gson.fromJson(responseString, weather.class);
         
-        System.out.println(weatr.getName());
-
-        for(int i = 0; i < weatr.getList().length;i++){
-            System.out.println(weatr.getList()[i].getTemp());
-            System.out.println(weatr.getList()[i].getHumidity());
-            System.out.println(weatr.getList()[i].getPressure());
-        }
-
+        System.out.println(responseString);
+        System.out.print(weatr.getTemp());
     }
     
 }
